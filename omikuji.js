@@ -1,19 +1,25 @@
 const result = document.querySelector(".card-text");
-const omikuji = ["Kyou", "Daikichi", "Kichi", "Chuukichi", "Shoukichi"];
+const omikuji = [
+  "Kyou　凶",
+  "Daikichi　大吉",
+  "Kichi　吉",
+  "Chuukichi　中吉",
+  "Shoukichi 小吉",
+];
 
 const span = document.querySelector("span");
 const button = document.querySelector("button");
 
 let func = (button) => {
-  button.innerHTML = "Dein Schicksal ist...";
+  button.innerHTML = "Dein Schicksal ist あなたの運勢は...";
 };
 
 let img = [
-  { name: "Kyou", src: "img/omikuji_kyou.png" },
-  { name: "Daikichi", src: "img/omikuji_daikichi.png" },
-  { name: "Kichi", src: "img/omikuji_kichi.png" },
-  { name: "Chukichi", src: "img/omikuji_chuukichi.png" },
-  { name: "Shoukichi", src: "img/omikuji_syoukichi.png" },
+  { name: "Kyou　凶", src: "img/omikuji_kyou.png" },
+  { name: "Daikichi　大吉", src: "img/omikuji_daikichi.png" },
+  { name: "Kichi　吉", src: "img/omikuji_kichi.png" },
+  { name: "Chukichi　中吉", src: "img/omikuji_chuukichi.png" },
+  { name: "Shoukichi　小吉", src: "img/omikuji_syoukichi.png" },
 ];
 
 button.addEventListener("click", () => {
@@ -29,13 +35,13 @@ button.addEventListener("click", () => {
       result.innerHTML = unsei;
       document.getElementById("images").src = img[num].src;
       resolve();
-    }, 3000);
+    }, 2000);
   });
 
   promise.then(() => {
     setTimeout(() => {
-      if (unsei === "Daikichi") {
-        alert("Omedetou!");
+      if (unsei === "Daikichi　大吉") {
+        alert("Omedetou　おめでとう!");
       }
     }, 500);
   });
